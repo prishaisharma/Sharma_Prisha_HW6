@@ -1,0 +1,95 @@
+
+R version 4.3.0 (2023-04-21) -- "Already Tomorrow"
+Copyright (C) 2023 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin20 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[R.app GUI 1.79 (8225) x86_64-apple-darwin20]
+
+[Workspace restored from /Users/prishasharma/.RData]
+[History restored from /Users/prishasharma/.Rapp.history]
+
+> A <- matrix(c(7, 9, 12, 2, 4, 13), nrow = 2, ncol = 3, byrow = TRUE)
+> 
+> A
+     [,1] [,2] [,3]
+[1,]    7    9   12
+[2,]    2    4   13
+> B,-matrix(c(1,7,12,19,2,8,13,20,3,9,14,21),nrow= 3,ncol= 4,byrow =TRUE)
+Error: unexpected ',' in "B,"
+> B<-matrix(c(1,7,12,19,2,8,13,20,3,9,14,21),nrow= 3,ncol= 4,byrow =TRUE)
+> B
+     [,1] [,2] [,3] [,4]
+[1,]    1    7   12   19
+[2,]    2    8   13   20
+[3,]    3    9   14   21
+> C <- A %*% B
+> C
+     [,1] [,2] [,3] [,4]
+[1,]   61  229  369  565
+[2,]   49  163  258  391
+> Data_Frame <-data.frame()
+> Data_Frame<-data.frame(id=c(1,2,3,4,5),name=c("Peter","Amy","Ryan","Gary","Michelle"),salary=c(623.30,515.20,611.00,729.00,843.25))
+> Data_Frame
+  id     name salary
+1  1    Peter 623.30
+2  2      Amy 515.20
+3  3     Ryan 611.00
+4  4     Gary 729.00
+5  5 Michelle 843.25
+> New_col_DF<-cbind(Data_Frame,departments=c(IT,Finance,Human Resources,Marketing,CEO))
+Error: unexpected symbol in "New_col_DF<-cbind(Data_Frame,departments=c(IT,Finance,Human Resources"
+> New_col_DF <-cbind(Data_Frame,departments=c("IT","Finance","HR","Marketing","CEO"))
+> New_col_DF
+  id     name salary departments
+1  1    Peter 623.30          IT
+2  2      Amy 515.20     Finance
+3  3     Ryan 611.00          HR
+4  4     Gary 729.00   Marketing
+5  5 Michelle 843.25         CEO
+> Data_Frame_New <-Data_Frame[-c(1,3,5),-c(2,3)]
+> Data_Frame_New
+[1] 2 4
+> Data_Frame_New <-New_col_DF[-c(1,3,5),-c(2,3)]
+> Data_Frame_New
+  id departments
+2  2     Finance
+4  4   Marketing
+> x<-c("Peter","Gary","Michelle")
+> y<-c(623.30,729.00,843.25)
+> barplot(y,names.arg=x,col="green")
+> summary(Data_Frame)
+       id        name               salary     
+ Min.   :1   Length:5           Min.   :515.2  
+ 1st Qu.:2   Class :character   1st Qu.:611.0  
+ Median :3   Mode  :character   Median :623.3  
+ Mean   :3                      Mean   :664.4  
+ 3rd Qu.:4                      3rd Qu.:729.0  
+ Max.   :5                      Max.   :843.2  
+> x<-c(843.25,515.2,623.3)
+> mylabel<-c("Highest Salary","Lowest Salary","Median Salary")
+> pie(x,label=mylabel,main="Salaries",col=colors)
+Error in rep_len(col, nx) : attempt to replicate non-vector
+> colors<-c("blue","yellow","green")
+> pie(x,label=mylabel,main="Salaries",col=colors)
+> 
+> legend("bottomright",mylabel,fill=colors)
+> pie(x,label=mylabel,main"Salaries",col=colors)
+Error: unexpected string constant in "pie(x,label=mylabel,main"Salaries""
+> pie(x,label=mylabel,main="Salaries",col=colors)
+> pie(x)
+2023-04-30 20:03:03.514 R[76766:14185103] -deltaZ is deprecated for NSEventTypeMagnify.  Please use -magnification.
+> 
